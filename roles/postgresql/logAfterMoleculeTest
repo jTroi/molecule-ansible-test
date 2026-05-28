@@ -1,0 +1,108 @@
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Populate instance config] ************************************************
+[32mok: [localhost][0m
+
+TASK [Dump instance config] ****************************************************
+[36mskipping: [localhost][0m
+
+PLAY RECAP *********************************************************************
+[32mlocalhost[0m                  : [32mok=1   [0m changed=0    unreachable=0    failed=0    [36mskipped=1   [0m rescued=0    ignored=0
+
+
+playbook: /home/vagrant/molecule-ansible-test/roles/postgresql/molecule/default/converge.yml
+
+PLAY [Create] ******************************************************************
+
+TASK [Populate instance config dict] *******************************************
+[36mskipping: [localhost][0m
+
+TASK [Convert instance config dict to a list] **********************************
+[36mskipping: [localhost][0m
+
+TASK [Dump instance config] ****************************************************
+[36mskipping: [localhost][0m
+
+PLAY RECAP *********************************************************************
+[32mlocalhost[0m                  : ok=0    changed=0    unreachable=0    failed=0    [36mskipped=3   [0m rescued=0    ignored=0
+
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Запустить задачи роли PostgreSQL] ****************************************
+[36mincluded: /home/vagrant/molecule-ansible-test/roles/postgresql/tasks/main.yml for debian12-kvm-host[0m
+
+TASK [Update cache APT] ********************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Установить утилиту acl для корректного переключения прав (Privilege Escalation)] ***
+[32mok: [debian12-kvm-host][0m
+
+TASK [Install PostgreSQL] ******************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Check service Postgresql in enabled] *************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Create User DataBase] ****************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Create DataBase and switch owner] ****************************************
+[32mok: [debian12-kvm-host][0m
+
+PLAY RECAP *********************************************************************
+[32mdebian12-kvm-host[0m          : [32mok=8   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Запустить задачи роли PostgreSQL] ****************************************
+[36mincluded: /home/vagrant/molecule-ansible-test/roles/postgresql/tasks/main.yml for debian12-kvm-host[0m
+
+TASK [Update cache APT] ********************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Установить утилиту acl для корректного переключения прав (Privilege Escalation)] ***
+[32mok: [debian12-kvm-host][0m
+
+TASK [Install PostgreSQL] ******************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Check service Postgresql in enabled] *************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Create User DataBase] ****************************************************
+[32mok: [debian12-kvm-host][0m
+
+TASK [Create DataBase and switch owner] ****************************************
+[32mok: [debian12-kvm-host][0m
+
+PLAY RECAP *********************************************************************
+[32mdebian12-kvm-host[0m          : [32mok=8   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[1;35m[WARNING]: Could not match supplied host pattern, ignoring: instance[0m
+
+PLAY [Verify] ******************************************************************
+[36mskipping: no hosts matched[0m
+
+PLAY RECAP *********************************************************************
+
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Populate instance config] ************************************************
+[32mok: [localhost][0m
+
+TASK [Dump instance config] ****************************************************
+[36mskipping: [localhost][0m
+
+PLAY RECAP *********************************************************************
+[32mlocalhost[0m                  : [32mok=1   [0m changed=0    unreachable=0    failed=0    [36mskipped=1   [0m rescued=0    ignored=0
+

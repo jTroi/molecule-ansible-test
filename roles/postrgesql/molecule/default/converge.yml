@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  become: false
+  gather_facts: false  # РЕШЕНИЕ: Запрещает Ansible запускать проблемный шаг сбора фактов
+  tasks:
+    - name: Include postrgesql role
+      ansible.builtin.include_role:
+        name: postgresql
