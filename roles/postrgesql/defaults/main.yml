@@ -1,6 +1,0 @@
----
-db_version: "15"
-
-db_name: "prod"
-db_user: "devops"
-db_password: "qwe123qwe"
