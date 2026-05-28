@@ -1,0 +1,41 @@
+---
+- name: Update cache APT
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Установить утилиту acl для корректного переключения прав (Privilege Escalation)
+  ansible.builtin.apt:
+    name: acl
+    state: present
+
+- name: Install PostgreSQL
+  ansible.builtin.apt:
+   name:
+    - "postgresql-{{ db_version }}"
+    - "postgresql-contrib"
+    - "python3-psycopg2"
+   state: present
+
+- name: Check service Postgresql in enabled
+  ansible.builtin.systemd:
+    name: postgresql
+    state: started
+    enabled: yes
+
+- name: Create User DataBase
+  community.postgresql.postgresql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    role_attr_flags: "CREATEDB,NOSUPERUSER"
+  become: yes
+  become_user: postgres
+
+
+- name: Create DataBase and switch owner
+  community.postgresql.postgresql_db:
+    name: "{{ db_name }}"
+    owner: "{{ db_user }}"
+  become: yes
+  become_user: postgres
+

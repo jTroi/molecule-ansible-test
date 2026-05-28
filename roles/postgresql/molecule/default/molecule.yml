@@ -1,0 +1,14 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: default
+platforms:
+  - name: debian12-kvm-host
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      interpreter_python: auto_silent
+verifier:
+  name: ansible

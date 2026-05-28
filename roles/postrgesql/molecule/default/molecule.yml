@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: debian12-test-db
+    image: geerlingguy/docker-debian12-ansible:latest
+    privileged: true
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns: host
+    ansible_connection: community.docker.docker
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      strict_control_permissions: false
+      # УКАЗЫВАЕМ ПУТЬ К РОЛЯМ (поднимаемся на 3 уровня выше до папки roles/):
+      roles_path: ../../../
+    ssh_connection:
+      pipelining: true
+verifier:
+  name: ansible

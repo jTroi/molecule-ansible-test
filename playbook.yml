@@ -1,0 +1,7 @@
+---
+- name: Settings server PostgreSQL
+  hosts: web
+  become: yes
+
+  roles:
+  - postrgesql

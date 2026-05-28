@@ -1,0 +1,24 @@
+
+PLAY [Settings server PostgreSQL] **********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.56.11]
+
+TASK [postrgesql : Update cache APT] *******************************************
+ok: [192.168.56.11]
+
+TASK [postrgesql : Install PostgreSQL] *****************************************
+ok: [192.168.56.11]
+
+TASK [postrgesql : Check service Postgresql in enabled] ************************
+ok: [192.168.56.11]
+
+TASK [postrgesql : Create User DataBase] ***************************************
+ok: [192.168.56.11]
+
+TASK [postrgesql : Create DataBase and switch owner] ***************************
+ok: [192.168.56.11]
+
+PLAY RECAP *********************************************************************
+192.168.56.11              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
